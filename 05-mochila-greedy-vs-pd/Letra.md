@@ -1,6 +1,6 @@
 ## Mochila: greedy vs programación dinámica
 
-Nombre de archivo: `mochila_greedy_vs_pd.cpp`
+Nombre de archivo: `mochila_greedy_vs_pd.cpp` · Código explicado línea por línea: [CODIGO.md](CODIGO.md)
 
 > Une los dos materiales de mochila: [`01-mochila-01-ejemplo`](../01-mochila-01-ejemplo/Letra.md) de este repo (PD) y [`02-mochila`](https://github.com/tomasClavijo/greedy/tree/main/02-mochila) del repo de [greedy](https://github.com/tomasClavijo/greedy). Usa las mismas instancias que el de greedy para poder comparar.
 
@@ -295,6 +295,8 @@ En `04` y `05` la fraccionaria lleva un pedazo de C (6/8 de 25 = 18,75), que en 
 ---
 
 ## Parte D: el código
+
+> La explicación **línea por línea**, con la traza completa de cada `for`, está en [CODIGO.md](CODIGO.md).
 
 El programa resuelve las tres versiones sobre la misma entrada. Sigue el estilo de los obligatorios: arrays con `new`/`delete`, la tabla como `int**` armada con `initMatriz`, y el ordenamiento programado a mano con `mergeSort`.
 

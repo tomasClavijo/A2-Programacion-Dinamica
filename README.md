@@ -5,6 +5,8 @@ Ejercicios de programación dinámica de los obligatorios de Estructuras de Dato
 - [A2-Obligatorio-2022](https://github.com/tomasClavijo/A2-Obligatorio-2022)
 - [A2-Obligatorio-2023](https://github.com/tomasClavijo/A2-Obligatorio-2023)
 
+> **¿Recién empezás con PD?** Leé primero [PD desde cero](PD-DESDE-CERO.md): arranca con Fibonacci, llega a la mochila desde la recursión e incluye un guion para dar la clase y las dudas típicas de los alumnos. Después seguí con el [código del 05 explicado línea por línea](05-mochila-greedy-vs-pd/CODIGO.md).
+
 Cada carpeta tiene:
 
 - `Letra.md`: la letra y una **explicación paso a paso**, con la tabla de PD del ejemplo llenada y algunas celdas calculadas a mano.
@@ -17,7 +19,7 @@ Cada carpeta tiene:
 | 02 | [Subconjunto de suma M](02-subconjunto-suma-m/Letra.md) | 2022, Ejercicio 8 | Mochila no acotada (booleana) | O(N·M) |
 | 03 | [Selección de archivos](03-archivos-mochila-2d/Letra.md) | 2023, Ejercicio 7 | Mochila 0/1 con dos restricciones | O(N·S·L) |
 | 04 | [Coeficientes binomiales](04-coeficientes-binomiales/Letra.md) | 2023, Ejercicio 9 | Triángulo de Pascal, O(N) espacio | O(N²) |
-| 05 | [Mochila: greedy vs PD](05-mochila-greedy-vs-pd/Letra.md) | 01 de este repo + [`greedy/02-mochila`](https://github.com/tomasClavijo/greedy/tree/main/02-mochila) | Greedy 0/1, PD 0/1 y greedy fraccionario sobre las mismas instancias | O(N log N) / O(N·C) |
+| 05 | [Mochila: greedy vs PD](05-mochila-greedy-vs-pd/Letra.md) ([código línea por línea](05-mochila-greedy-vs-pd/CODIGO.md)) | 01 de este repo + [`greedy/02-mochila`](https://github.com/tomasClavijo/greedy/tree/main/02-mochila) | Greedy 0/1, PD 0/1 y greedy fraccionario sobre las mismas instancias | O(N log N) / O(N·C) |
 
 ## Orden de lectura sugerido
 
