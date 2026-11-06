@@ -17,6 +17,7 @@ Cada carpeta tiene:
 | 02 | [Subconjunto de suma M](02-subconjunto-suma-m/Letra.md) | 2022, Ejercicio 8 | Mochila no acotada (booleana) | O(N·M) |
 | 03 | [Selección de archivos](03-archivos-mochila-2d/Letra.md) | 2023, Ejercicio 7 | Mochila 0/1 con dos restricciones | O(N·S·L) |
 | 04 | [Coeficientes binomiales](04-coeficientes-binomiales/Letra.md) | 2023, Ejercicio 9 | Triángulo de Pascal, O(N) espacio | O(N²) |
+| 05 | [Mochila: greedy vs PD](05-mochila-greedy-vs-pd/Letra.md) | 01 de este repo + [`greedy/02-mochila`](https://github.com/tomasClavijo/greedy/tree/main/02-mochila) | Greedy 0/1, PD 0/1 y greedy fraccionario sobre las mismas instancias | O(N log N) / O(N·C) |
 
 ## Orden de lectura sugerido
 
@@ -24,6 +25,7 @@ Cada carpeta tiene:
 2. **02, Suma M.** Igual que la mochila pero con repetición. El único cambio es que al usar un elemento se queda en la misma fila (`tab[i][j-Ki]` en lugar de `tab[i-1][...]`). También muestra cómo responder muchas consultas con una sola tabla.
 3. **03, Archivos.** Una mochila con dos capacidades. Muestra cómo ahorrar una dimensión usando una sola matriz recorrida **de mayor a menor**, y por qué ese orden evita usar un archivo dos veces.
 4. **04, Binomiales.** Una PD fuera de la familia de la mochila: la regla de Pascal, guardando solo la fila actual.
+5. **05, Greedy vs PD.** La mochila resuelta con las dos técnicas. Muestra dónde falla el greedy, en qué celda de la tabla la PD lo corrige y por qué en la mochila fraccionaria el greedy sí es óptimo. Sirve de puente con el [repo de greedy](https://github.com/tomasClavijo/greedy).
 
 ## Método general (los pasos que siguen todas las explicaciones)
 

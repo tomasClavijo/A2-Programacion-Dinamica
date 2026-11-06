@@ -1,0 +1,3 @@
+greedy 0/1: 12 [1 2]
+pd 0/1: 15 [1 3]
+greedy fraccionaria: 19.43
