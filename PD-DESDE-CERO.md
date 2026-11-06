@@ -184,7 +184,7 @@ Se cambia cada llamada `mejor(i, c)` por una celda `tab[i][c]`, y se llenan en u
 | llamada inicial `mejor(N, C)` | respuesta `tab[N][C]` |
 | (el orden lo da la recursión) | `for i` de 1 a N, `for c` de 0 a C |
 
-Así se obtiene exactamente el código del [ejercicio 01](01-mochila-01-ejemplo/mochila01.cpp) y de la PD del [ejercicio 05](05-mochila-greedy-vs-pd/CODIGO.md#5-pd-01-líneas-141169--lo-central). **Escribir la tabla no es inventar algo nuevo: es la recursión, guardada.**
+Así se obtiene exactamente el código del [ejercicio 01](01-mochila-01-ejemplo/mochila01.cpp) y de la PD del [ejercicio 05](05-mochila-greedy-vs-pd/CODIGO.md#4-pd-líneas-6589). **Escribir la tabla no es inventar algo nuevo: es la recursión, guardada.**
 
 ### 5.4 Leer una celda en voz alta
 
@@ -231,10 +231,10 @@ Todas son la misma receta. Lo que cambia es qué significa la celda y qué opcio
 |---|---|---|---|
 | 0–15 | Fibonacci | Escribir la recursión. Dibujar el árbol de `fib(5)` y marcar los repetidos con colores. Preguntar: "¿cuántas veces calculamos fib(2)?". Agregar la libreta (memo), y después darla vuelta (tabla). | Sección 2 |
 | 15–20 | Cuándo sirve PD | Las dos condiciones. Tabla comparando con DyC, greedy y BT. | Sección 3 |
-| 20–30 | Mochila: el problema | Plantear la capacidad 7 y hacer votar un criterio greedy. Mostrar que el ratio da 12 y que A + C da 15. | [05, parte A](05-mochila-greedy-vs-pd/Letra.md#parte-a-greedy-01-por-ratio) |
+| 20–30 | Mochila: el problema | Plantear la capacidad 7 y hacer votar un criterio greedy. Mostrar que el ratio da 12 y que A + C da 15. | [05, parte A](05-mochila-greedy-vs-pd/Letra.md#parte-a-greedy) |
 | 30–40 | Mochila: la recursión | "¿Qué decisión tomo con el último objeto?" → dos opciones → `mejor(i, c)`. Mostrar que solo depende de (i, c), así que se repite. | Sección 5.1–5.2 |
-| 40–60 | Mochila: la tabla | Llenar la tabla de capacidad 7 **en el pizarrón con ellos**, fila por fila. Frenar en `tab[3][7]` y leerla en voz alta. | [05, CODIGO.md 5.4](05-mochila-greedy-vs-pd/CODIGO.md#54-traza-completa-de-los-for) |
-| 60–65 | Reconstrucción | Recorrer la tabla hacia atrás y encontrar A + C. | [05, CODIGO.md 5.5](05-mochila-greedy-vs-pd/CODIGO.md#55-reconstruir-qué-objetos-se-usaron-líneas-158164) |
+| 40–60 | Mochila: la tabla | Llenar la tabla de capacidad 7 **en el pizarrón con ellos**, fila por fila. Frenar en `tab[3][7]` y leerla en voz alta. | [05, CODIGO.md: traza](05-mochila-greedy-vs-pd/CODIGO.md#traza-completa-de-los-for) |
+| 60–65 | Reconstrucción | Recorrer la tabla hacia atrás y encontrar A + C. | [05, CODIGO.md: reconstrucción](05-mochila-greedy-vs-pd/CODIGO.md#reconstruir-qué-objetos-se-usaron-líneas-7884) |
 | 65–70 | El código | Proyectar las ~10 líneas del "resumen para el pizarrón" y mostrar que son la tabla que llenaron. | [05, CODIGO.md resumen](05-mochila-greedy-vs-pd/CODIGO.md#resumen-para-el-pizarrón) |
 | 70–75 | Cierre | La receta de 8 pasos. Dejar el 02 (suma M) como tarea: es la misma tabla con un solo cambio. | Sección 4 |
 

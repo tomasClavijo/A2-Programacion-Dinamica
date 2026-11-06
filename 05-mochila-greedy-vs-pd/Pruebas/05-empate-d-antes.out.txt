@@ -1,3 +1,2 @@
-greedy 0/1: 28 [1 2]
-pd 0/1: 30 [2 4]
-greedy fraccionaria: 38.75
+greedy: 28 [1 2]
+pd: 30 [2 4]
