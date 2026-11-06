@@ -296,28 +296,47 @@ En `04` y `05` la fraccionaria lleva un pedazo de C (6/8 de 25 = 18,75), que en 
 
 ## Parte D: el código
 
-El programa resuelve las tres versiones sobre la misma entrada.
+El programa resuelve las tres versiones sobre la misma entrada. Sigue el estilo de los obligatorios: arrays con `new`/`delete`, la tabla como `int**` armada con `initMatriz`, y el ordenamiento programado a mano con `mergeSort`.
 
 ### Comparar ratios sin dividir
 
 ```cpp
-bool mejorRatio(const Objeto& a, const Objeto& b) {
+bool mejorRatio(Objeto a, Objeto b) {
     return (long long)a.valor * b.peso > (long long)b.valor * a.peso;
 }
 ```
 
 Se quiere comparar `a.valor / a.peso > b.valor / b.peso`. Con enteros la división trunca (5 / 2 = 2). Como los pesos son positivos, se pasan multiplicando y la cuenta queda exacta. El `long long` evita overflow si los valores son grandes.
 
-`ordenarPorRatio` usa `stable_sort`: ante un empate se respeta el orden de la entrada, como pide la letra.
+### Ordenar por ratio con mergeSort
+
+Es el mismo `mergeSort` del ejercicio 8 de 2023 (plataformas), pero ordena `Objeto` de **mayor a menor** ratio. En `merge`:
+
+```cpp
+// Solo paso el de la derecha si es ESTRICTAMENTE mejor (estabilidad).
+if (mejorRatio(R[j], L[i])) {
+    arr[k] = R[j];  j++;
+} else {
+    arr[k] = L[i];  i++;
+}
+```
+
+Ante un empate pasa el de la izquierda, que es el que estaba antes en la entrada. Eso hace que el ordenamiento sea **estable**, y es lo que necesita la letra ("ante un empate gana el que aparece primero"). Con `>=` se perdería esa propiedad.
+
+`ordenarPorRatio` ordena una **copia**, porque la PD necesita los objetos en el orden original.
+
+### Qué objetos se usan
+
+Se guardan en un array `bool* usados` de tamaño `N + 1`, indexado por el número de objeto (1..N). Se crea con `new bool[N + 1]()` para que arranque en `false`. Al imprimir se recorre del 1 al `N`, así que los números salen ordenados sin hacer nada más.
 
 ### Greedy 0/1
 
 ```cpp
-for (const Objeto& o : ordenarPorRatio(objetos)) {
-    if (o.peso <= libre) {          // entra: lo meto entero
-        libre -= o.peso;
-        total += o.valor;
-        usados.push_back(o.numero);
+for (int i = 0; i < N; i++) {
+    if (orden[i].peso <= libre) {          // entra: lo meto entero
+        libre -= orden[i].peso;
+        total += orden[i].valor;
+        usados[orden[i].numero] = true;
     }
     // no entra: lo salteo y sigo con el siguiente
 }
@@ -328,28 +347,33 @@ Un solo recorrido y ninguna vuelta atrás. El error común es poner un `break` c
 ### PD 0/1
 
 ```cpp
-for (int i = 1; i <= n; i++)
+int ** tab = initMatriz(N + 1, capacidad + 1);   // todo en 0: fila 0 = caso base
+for (int i = 1; i <= N; i++) {
+    int peso = objetos[i - 1].peso;
+    int valor = objetos[i - 1].valor;
     for (int c = 0; c <= capacidad; c++) {
-        tab[i][c] = tab[i - 1][c];                                     // no ponerlo
-        if (o.peso <= c)
-            tab[i][c] = max(tab[i][c], o.valor + tab[i - 1][c - o.peso]);  // ponerlo
+        tab[i][c] = tab[i - 1][c];                                  // no ponerlo
+        if (peso <= c)
+            tab[i][c] = max(tab[i][c], valor + tab[i - 1][c - peso]);   // ponerlo
     }
+}
 ```
 
-Es la recurrencia del paso B4 tal cual, con tabulación (*bottom-up*). Se guarda la tabla completa para poder reconstruir (paso B7). El `mochilaOptima` del repo de greedy usa una sola fila recorrida de mayor a menor (O(C) de espacio, como el [ejercicio 03](../03-archivos-mochila-2d/Letra.md)), y con eso da el valor pero no los objetos.
+Es la recurrencia del paso B4 tal cual, con tabulación (*bottom-up*), y tiene la misma forma que el [ejercicio 01](../01-mochila-01-ejemplo/mochila01.cpp). La fila `i` corresponde a `objetos[i - 1]` porque el array arranca en 0 y la tabla reserva la fila 0 para el caso base. Se guarda la tabla completa para poder reconstruir (paso B7). El `mochilaOptima` del repo de greedy usa una sola fila recorrida de mayor a menor (O(C) de espacio, como el [ejercicio 03](../03-archivos-mochila-2d/Letra.md)), y con eso da el valor pero no los objetos.
 
 ### Greedy fraccionario
 
 ```cpp
-if (o.peso <= libre) {                       // entra entero
-    libre -= o.peso;  total += o.valor;
-} else {                                     // entra un pedazo
-    total += (double)o.valor * libre / o.peso;
+if (orden[i].peso <= libre) {                  // entra entero
+    libre -= orden[i].peso;
+    total += orden[i].valor;
+} else {                                       // entra un pedazo
+    total += (double)orden[i].valor * libre / orden[i].peso;
     libre = 0;
 }
 ```
 
-La única diferencia con el greedy 0/1 es la rama `else`: en lugar de saltear el objeto, se lleva la fracción `libre / peso`.
+La única diferencia con el greedy 0/1 es la rama `else`: en lugar de saltear el objeto, se lleva la fracción `libre / peso`. El `(double)` va antes de multiplicar y dividir, porque si no la división sería entera.
 
 ---
 
