@@ -20,6 +20,7 @@ Cada carpeta tiene:
 | 03 | [Selección de archivos](03-archivos-mochila-2d/Letra.md) | 2023, Ejercicio 7 | Mochila 0/1 con dos restricciones | O(N·S·L) |
 | 04 | [Coeficientes binomiales](04-coeficientes-binomiales/Letra.md) | 2023, Ejercicio 9 | Triángulo de Pascal, O(N) espacio | O(N²) |
 | 05 | [Mochila: greedy vs PD](05-mochila-greedy-vs-pd/Letra.md) ([código línea por línea](05-mochila-greedy-vs-pd/CODIGO.md)) | 01 de este repo + [`greedy/02-mochila`](https://github.com/tomasClavijo/greedy/tree/main/02-mochila) | Greedy por ratio contra PD 0/1 sobre las mismas instancias | O(N²) / O(N·C) |
+| 06 | [Mochila 0/1 recursiva](06-mochila-recursiva/mochila_recursiva.cpp) | `Ejemplos/Dac_Mochila01.cpp` de 2022 | Recursión sin guardar contra memoización (*top-down*), con contador de llamadas | O(2ᴺ) / O(N·C) |
 
 ## Orden de lectura sugerido
 
