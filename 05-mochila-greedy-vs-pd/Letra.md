@@ -1,6 +1,6 @@
 ## Mochila 0/1: greedy vs programación dinámica
 
-Nombre de archivo: `mochila_greedy_vs_pd.cpp` · Código explicado línea por línea: [CODIGO.md](CODIGO.md)
+Nombre de archivo: `mochila_greedy_vs_pd.cpp` · Código explicado línea por línea: [CODIGO.md](CODIGO.md) · Matriz interactiva: [`matriz.html`](matriz.html) (descargarla y abrirla en el navegador)
 
 > Une los dos materiales de mochila: [`01-mochila-01-ejemplo`](../01-mochila-01-ejemplo/Letra.md) de este repo (PD) y [`02-mochila`](https://github.com/tomasClavijo/greedy/tree/main/02-mochila) del repo de [greedy](https://github.com/tomasClavijo/greedy). Usa las mismas instancias que el de greedy para poder comparar.
 

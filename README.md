@@ -5,7 +5,7 @@ Ejercicios de programación dinámica de los obligatorios de Estructuras de Dato
 - [A2-Obligatorio-2022](https://github.com/tomasClavijo/A2-Obligatorio-2022)
 - [A2-Obligatorio-2023](https://github.com/tomasClavijo/A2-Obligatorio-2023)
 
-> **¿Recién empezás con PD?** Leé primero [PD desde cero](PD-DESDE-CERO.md): arranca con Fibonacci, llega a la mochila desde la recursión e incluye un guion para dar la clase y las dudas típicas de los alumnos. Después seguí con el [código del 05 explicado línea por línea](05-mochila-greedy-vs-pd/CODIGO.md).
+> **¿Recién empezás con PD?** Leé primero [PD desde cero](PD-DESDE-CERO.md): arranca con Fibonacci, llega a la mochila desde la recursión e incluye un guion para dar la clase y las dudas típicas de los alumnos. Después seguí con el [código del 05 explicado línea por línea](05-mochila-greedy-vs-pd/CODIGO.md). Para proyectar en clase está la [matriz interactiva](05-mochila-greedy-vs-pd/matriz.html), que se descarga y se abre en el navegador: llena la tabla paso a paso y hace la reconstrucción.
 
 Cada carpeta tiene:
 
